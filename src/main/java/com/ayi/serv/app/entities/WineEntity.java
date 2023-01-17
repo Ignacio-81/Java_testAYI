@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @ToString
 @Entity //Definimos la clase como una enitdad a ser utilizada por el Entity Manager para poder persistir en la BD
 @Table(name = "wines")//Definimos la tabla donde seran almacenados los vinos
-public class WineEntity implements Serializable {
+public class WineEntity implements Serializable { //Implementar Serializable para dar la capacidad a los objetos que tienen que persistir.
 
     //Definimos la primary key o id
     @Id

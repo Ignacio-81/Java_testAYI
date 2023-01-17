@@ -21,7 +21,7 @@ import java.time.LocalDate;
         description = "Represents the data needed to get Wines "
 )
 
-public class WineResponseDTO implements Serializable {
+public class WineResponseDTO {
 
 
     private Long idWine;
