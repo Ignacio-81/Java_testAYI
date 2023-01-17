@@ -1,2 +1,4 @@
 # Java_testAYI
-Java test with springboot for AYI implementation
+Java test with Springboot for AYI implementation
+Swagger url:
+http://localhost:8080/swagger-ui.html#
