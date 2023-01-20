@@ -1,5 +1,17 @@
 package com.ayi.serv.app.entities;
+/**
+ * Wine Entity
+ * @Table (name = "wines")
+ * Properties:
+ * @id Long;
+ * @name String;
+ * @varietal String;
+ * @harvestdate Localdate;
+ * @cellar String;
+ * @code Integer;
+ *
 
+ */
 import lombok.*;
 
 import javax.persistence.*;

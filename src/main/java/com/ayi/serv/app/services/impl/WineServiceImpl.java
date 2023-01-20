@@ -17,6 +17,9 @@ import java.util.stream.Collectors;
 
 /**
  * Wine Service Implementation
+ * This service implements GetAllWines Method and is consumed by WineCOntroller
+ *
+ * @Service
  * @Transactional
  *
  */

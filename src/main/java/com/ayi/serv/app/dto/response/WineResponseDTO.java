@@ -1,5 +1,18 @@
 package com.ayi.serv.app.dto.response;
+/**
+ * Wine Entity DTO
+ * This Entity is used to send response to client by WineController.
+ * @Table (name = "wines")
+ * Properties:
+ * @id Long;
+ * @name String;
+ * @varietal String;
+ * @harvestdate Localdate;
+ * @cellar String;
+ * @code Integer;
+ *
 
+ */
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

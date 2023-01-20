@@ -31,7 +31,13 @@ public class WineController {
 
     @Autowired
     private IWineService iWineService;
-
+    /**
+     * Get all Wines on the schema "Wines"
+     *
+     * @param, No params
+     *
+     * @return , List with Wines Entities,  http Accepted if OK , Http NotFound if no object get
+     */
     @GetMapping(
             value = "/getAllWines",
             produces = {MediaType.APPLICATION_JSON_VALUE}
