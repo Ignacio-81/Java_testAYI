@@ -2,3 +2,6 @@
 Java test with Springboot for AYI implementation
 Swagger url:
 http://localhost:8080/swagger-ui.html#
+
+Endpoint:
+GET: /getAllWines
