@@ -3,6 +3,8 @@ package com.ayi.serv.app.controllers;
 import com.ayi.serv.app.dto.response.WineResponseDTO;
 //import com.ayi.serv.app.exceptions.DataBaseException;
 //import com.ayi.serv.app.exceptions.ReadAccessException;
+import com.ayi.serv.app.exceptions.DataBaseException;
+import com.ayi.serv.app.exceptions.ReadAccessException;
 import com.ayi.serv.app.services.IWineService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -59,19 +61,19 @@ public class WineController {
     public ResponseEntity<?> getAllWines(){ //ResponseEntity nos permite responder con una estructura HTTP
         Map<String, Object> response = new HashMap<>();
         List<WineResponseDTO> wineResponseDTOList = null;
-        //try{
+        try{
             wineResponseDTOList = iWineService.getAllWines();
- /*       } catch (ReadAccessException e) {
+        } catch (ReadAccessException e) {
             response.put("Message: Problem while getting Wines", e.getMessage());
+            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+        } catch (DataBaseException e) {
+            response.put("Message:", "DataBase Error , please contact Administrator");
             return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
         } catch (RuntimeException e) {
             response.put("Message:", "System Error , please contact Administrator");
-            return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } catch (DataBaseException e) {
-            response.put("Message:", "DataBase Error , please contact Administrator");
-            return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
-*/        log.info("Leaving getAllWines [response]: {}", wineResponseDTOList.toString());
+        log.info("Leaving getAllWines [response]: {}", wineResponseDTOList.toString());
         return new ResponseEntity<>(wineResponseDTOList, HttpStatus.ACCEPTED);
     }
 
