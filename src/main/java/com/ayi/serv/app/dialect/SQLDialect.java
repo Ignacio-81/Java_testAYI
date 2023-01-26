@@ -6,7 +6,7 @@ import org.hibernate.dialect.Dialect;
 import org.hibernate.dialect.function.StandardSQLFunction;
 import org.hibernate.dialect.function.SQLFunctionTemplate;
 import org.hibernate.dialect.function.VarArgsSQLFunction;
-import org.hibernate.Hibernate;
+import org.hibernate.dialect.identity.IdentityColumnSupport;
 import org.hibernate.type.StringType;
 
 public class SQLDialect extends Dialect {
@@ -41,30 +41,14 @@ public class SQLDialect extends Dialect {
         registerFunction("substring", new StandardSQLFunction("substr", StringType.INSTANCE));
     }
 
-    public boolean supportsIdentityColumns() {
-        return true;
-    }
 
     public boolean hasDataTypeInIdentityColumn() {
         return false; // As specify in NHibernate dialect
     }
 
-    public String getIdentityColumnString() {
-        // return "integer primary key autoincrement";
-        return "integer";
-    }
-
-    public String getIdentitySelectString() {
-        return "select last_insert_rowid()";
-    }
-
-    public boolean supportsLimit() {
-        return true;
-    }
-
-    protected String getLimitString(String query, boolean hasOffset) {
-        return new StringBuffer(query.length() + 20).append(query).append(hasOffset ? " limit ? offset ?" : " limit ?")
-                .toString();
+    @Override
+    public IdentityColumnSupport getIdentityColumnSupport() {
+        return new SQLiteIdentityColumnSupport();
     }
 
     public boolean supportsTemporaryTables() {
@@ -95,14 +79,6 @@ public class SQLDialect extends Dialect {
         return true;
     }
 
-    public boolean hasAlterTable() {
-        return false; // As specify in NHibernate dialect
-    }
-
-    public boolean dropConstraints() {
-        return false;
-    }
-
     public String getAddColumnString() {
         return "add column";
     }
@@ -115,19 +91,6 @@ public class SQLDialect extends Dialect {
         return false;
     }
 
-    public String getDropForeignKeyString() {
-        throw new UnsupportedOperationException("No drop foreign key syntax supported by SQLiteDialect");
-    }
-
-    public String getAddForeignKeyConstraintString(String constraintName, String[] foreignKey, String referencedTable,
-                                                   String[] primaryKey, boolean referencesPrimaryKey) {
-        throw new UnsupportedOperationException("No add foreign key syntax supported by SQLiteDialect");
-    }
-
-    public String getAddPrimaryKeyConstraintString(String constraintName) {
-        throw new UnsupportedOperationException("No add primary key syntax supported by SQLiteDialect");
-    }
-
     public boolean supportsIfExistsBeforeTableName() {
         return true;
     }
@@ -135,4 +98,31 @@ public class SQLDialect extends Dialect {
     public boolean supportsCascadeDelete() {
         return false;
     }
+
+    @Override
+    public boolean hasAlterTable() {
+        return false;
+    }
+
+    @Override
+    public boolean dropConstraints() {
+        return false;
+    }
+
+    @Override
+    public String getDropForeignKeyString() {
+        return "";
+    }
+
+    @Override
+    public String getAddForeignKeyConstraintString(String cn,
+                                                   String[] fk, String t, String[] pk, boolean rpk) {
+        return "";
+    }
+
+    @Override
+    public String getAddPrimaryKeyConstraintString(String constraintName) {
+        return "";
+    }
+
 }
