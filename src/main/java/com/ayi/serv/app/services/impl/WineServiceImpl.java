@@ -50,12 +50,12 @@ public class WineServiceImpl extends Exception implements IWineService {
 
         wineResponseDTO = wineEntities.stream() // Acá voy agregando a la lista todas las filas que encuentra con el nombre y apellido que brinde como parámetro
                 .map(lt -> new WineResponseDTO(
-                        lt.getIdWine(),
+                        lt.getId(),
                         lt.getName(),
                         lt.getVarietal(),
-                        lt.getHarvestDate(),
-                        lt.getWineCellar(),
-                        lt.getInternalCode()
+                        lt.getHarvest(),
+                        lt.getCellar(),
+                        lt.getCode()
                 ))
                 .collect(Collectors.toList());
 
