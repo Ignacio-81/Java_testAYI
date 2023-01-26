@@ -1,5 +1,9 @@
 package com.ayi.serv.app.dialect;
-
+/**
+ * SQLite Dialect for hibernate
+ * Extends Hiberante.Dialect
+ *
+ */
 import java.sql.Types;
 
 import org.hibernate.dialect.Dialect;

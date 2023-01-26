@@ -6,7 +6,7 @@ package com.ayi.serv.app.entities;
  * @id Long;
  * @name String;
  * @varietal String;
- * @harvestdate Localdate;
+ * @harvestdate String;
  * @cellar String;
  * @code Integer;
  *
@@ -17,9 +17,6 @@ import lombok.*;
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.util.Date;
 
 @Getter
 @Setter

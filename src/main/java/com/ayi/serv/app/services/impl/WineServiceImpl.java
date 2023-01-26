@@ -2,7 +2,6 @@ package com.ayi.serv.app.services.impl;
 
 import com.ayi.serv.app.dto.response.WineResponseDTO;
 import com.ayi.serv.app.entities.WineEntity;
-//import com.ayi.serv.app.exceptions.DataBaseException;
 import com.ayi.serv.app.exceptions.DataBaseException;
 import com.ayi.serv.app.repository.IWineEntityRepository;
 import com.ayi.serv.app.services.IWineService;

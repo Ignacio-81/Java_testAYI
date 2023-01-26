@@ -7,7 +7,7 @@ package com.ayi.serv.app.dto.response;
  * @id Long;
  * @name String;
  * @varietal String;
- * @harvestdate Localdate;
+ * @harvestdate String;
  * @cellar String;
  * @code Integer;
  *
@@ -17,15 +17,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import java.io.Serializable;
-import java.sql.Timestamp;
-import java.time.DateTimeException;
-import java.time.LocalDate;
-import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
