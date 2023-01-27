@@ -18,6 +18,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
+import java.sql.Timestamp;
+import java.time.LocalDate;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -41,7 +44,7 @@ public class WineResponseDTO {
     private String varietal;
 
     @ApiModelProperty(position = 3, notes = "Non negative value, The last name is required.")
-    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "YYYY-MM-DD hh:mm:ss")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-mm-dd")
     private String harvest;
 
     @ApiModelProperty(position = 4, notes = "Non negative value, The last name is required.")

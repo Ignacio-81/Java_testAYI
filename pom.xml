@@ -17,8 +17,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>17</java.version>
 		<javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
-
-		<modelmapper.version>3.1.0</modelmapper.version>
 		<springfox.version>2.9.2</springfox.version>
 	</properties>
 
@@ -67,11 +65,6 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>${springfox.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.modelmapper</groupId>
-			<artifactId>modelmapper</artifactId>
-			<version>${modelmapper.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.xerial</groupId>
