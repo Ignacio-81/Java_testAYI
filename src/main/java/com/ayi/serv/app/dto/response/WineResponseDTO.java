@@ -7,7 +7,7 @@ package com.ayi.serv.app.dto.response;
  * @id Long;
  * @name String;
  * @varietal String;
- * @harvestdate Localdate;
+ * @harvestdate String;
  * @cellar String;
  * @code Integer;
  *
@@ -18,10 +18,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import java.io.Serializable;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 
 @NoArgsConstructor
@@ -37,37 +34,25 @@ import java.time.LocalDate;
 public class WineResponseDTO {
 
 
-    private Long idWine;
+    private Integer id;
 
     @ApiModelProperty(position = 1, notes = "Non negative value, The first name is required.")
-    @NotNull
-    @NotEmpty
-    @NotBlank
     private String name;
 
     @ApiModelProperty(position = 2, notes = "Non negative value, The last name is required.")
-    @NotNull
-    @NotEmpty
-    @NotBlank
+
     private String varietal;
 
     @ApiModelProperty(position = 3, notes = "Non negative value, The last name is required.")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    @NotNull
-    @NotEmpty
-    @NotBlank
-    private LocalDate harvestDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-mm-dd")
+    private String harvest;
 
     @ApiModelProperty(position = 4, notes = "Non negative value, The last name is required.")
-    @NotNull
-    @NotEmpty
-    @NotBlank
-    private String wineCellar;
+
+    private String cellar;
 
     @ApiModelProperty(position = 5, notes = "Non negative value, The last name is required.")
-    @NotNull
-    @NotEmpty
-    @NotBlank
+
     private Integer code;
 
 }

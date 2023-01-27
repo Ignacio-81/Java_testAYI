@@ -2,7 +2,6 @@ package com.ayi.serv.app.services.impl;
 
 import com.ayi.serv.app.dto.response.WineResponseDTO;
 import com.ayi.serv.app.entities.WineEntity;
-//import com.ayi.serv.app.exceptions.DataBaseException;
 import com.ayi.serv.app.exceptions.DataBaseException;
 import com.ayi.serv.app.repository.IWineEntityRepository;
 import com.ayi.serv.app.services.IWineService;
@@ -50,12 +49,12 @@ public class WineServiceImpl extends Exception implements IWineService {
 
         wineResponseDTO = wineEntities.stream() // Acá voy agregando a la lista todas las filas que encuentra con el nombre y apellido que brinde como parámetro
                 .map(lt -> new WineResponseDTO(
-                        lt.getIdWine(),
+                        lt.getId(),
                         lt.getName(),
                         lt.getVarietal(),
-                        lt.getHarvestDate(),
-                        lt.getWineCellar(),
-                        lt.getInternalCode()
+                        lt.getHarvest(),
+                        lt.getCellar(),
+                        lt.getCode()
                 ))
                 .collect(Collectors.toList());
 

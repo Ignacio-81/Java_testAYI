@@ -17,8 +17,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>17</java.version>
 		<javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
-
-		<modelmapper.version>3.1.0</modelmapper.version>
 		<springfox.version>2.9.2</springfox.version>
 	</properties>
 
@@ -69,9 +67,9 @@
 			<version>${springfox.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.modelmapper</groupId>
-			<artifactId>modelmapper</artifactId>
-			<version>${modelmapper.version}</version>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<version>3.16.1</version>
 		</dependency>
 
 	</dependencies>
