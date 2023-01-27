@@ -7,7 +7,9 @@ import com.ayi.serv.app.exceptions.ReadAccessException;
 //import com.ayi.serv.app.exceptions.ReadAccessException;
 
 import java.util.List;
-
+/**
+ * Interface for Wine Service
+ */
 public interface IWineService {
     List<WineResponseDTO> getAllWines() throws ReadAccessException, DataBaseException;// throws ReadAccessException, DataBaseException;
 }

@@ -1,6 +1,6 @@
 package com.ayi.serv.app.configurations;
 /**
- * SE utiliza para manejar una api estandar
+ * Swagger configuration for Api Standard
  */
 
 import org.springframework.context.annotation.Bean;

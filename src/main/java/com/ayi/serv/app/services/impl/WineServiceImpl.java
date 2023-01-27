@@ -32,7 +32,12 @@ public class WineServiceImpl extends Exception implements IWineService {
 
     @Autowired // Inyecta la interfaz hacia el repositorio
     private IWineEntityRepository wineRepository; // Fijate que no hicimos implementación de IPersonRepository, ya con esto es suficiente
-
+    /**
+     * Methed that search for all wines in the data bse
+     *
+     * @param, No Param
+     * @return List of Wines in WineResponseDTO
+     */
     @Override
     public List<WineResponseDTO> getAllWines() throws ReadAccessException, DataBaseException { // throws ReadAccessException, DataBaseException {
         List<WineResponseDTO> wineResponseDTO;
